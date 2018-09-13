@@ -32,7 +32,11 @@ var Square = function (_React$Component) {
   _createClass(Square, [{
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('button', { className: 'square' });
+      return _react2.default.createElement(
+        'button',
+        { className: 'square' },
+        this.props.value
+      );
     }
   }]);
 
@@ -51,7 +55,7 @@ var Board = function (_React$Component2) {
   _createClass(Board, [{
     key: 'renderSquare',
     value: function renderSquare(i) {
-      return _react2.default.createElement(Square, null);
+      return _react2.default.createElement(Square, { value: i });
     }
   }, {
     key: 'render',
