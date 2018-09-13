@@ -50,7 +50,8 @@ var Board = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Board.__proto__ || Object.getPrototypeOf(Board)).call(this, props));
 
     _this.state = {
-      squares: Array(9).fill(null)
+      squares: Array(9).fill(null),
+      xIsNext: true
     };
     return _this;
   }
@@ -59,8 +60,11 @@ var Board = function (_React$Component) {
     key: 'handleClick',
     value: function handleClick(i) {
       var squares = this.state.squares.slice();
-      squares[i] = 'X';
-      this.setState({ squares: squares });
+      squares[i] = this.state.xIsNext ? 'X' : 'O';
+      this.setState({
+        squares: squares,
+        xIsNext: !this.state.xIsNext
+      });
     }
   }, {
     key: 'renderSquare',
@@ -77,7 +81,7 @@ var Board = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var status = 'Next player: X';
+      var status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
 
       return _react2.default.createElement(
         'div',
