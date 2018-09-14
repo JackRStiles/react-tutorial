@@ -3,7 +3,7 @@
   "babelMapsAddUrl":                  false,
   "babelSourcePath":                  "",
   "babelTranspilePath":               "",
-  "createMap":                        false,
+  "createMap":                        true,
   "createTargetDirectories":          false,
   "createTranspiledCode":             true,
   "disableWhenNoBabelrcFileInPath":   true,

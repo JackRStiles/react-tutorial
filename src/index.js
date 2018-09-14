@@ -72,11 +72,6 @@ var Board = function (_React$Component) {
         null,
         _react2.default.createElement(
           'div',
-          { className: 'status' },
-          status
-        ),
-        _react2.default.createElement(
-          'div',
           { className: 'board-row' },
           this.renderSquare(0),
           this.renderSquare(1),
@@ -125,7 +120,7 @@ var Game = function (_React$Component2) {
     value: function handleClick(i) {
       var history = this.state.history;
       var current = history[history.length - 1];
-      var squares = this.state.squares.slice();
+      var squares = current.squares.slice();
       if (calculateWinner(squares) || squares[i]) {
         return;
       }
