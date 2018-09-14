@@ -141,6 +141,21 @@ var Game = function (_React$Component2) {
       var current = history[history.length - 1];
       var winner = calculateWinner(current.squares);
 
+      var moves = history.map(function (step, move) {
+        var desc = move ? 'Go to move #' + move : 'Go to game start';
+        return _react2.default.createElement(
+          'li',
+          null,
+          _react2.default.createElement(
+            'button',
+            { onClick: function onClick() {
+                return _this4.jumpTo(move);
+              } },
+            desc
+          )
+        );
+      });
+
       var status = void 0;
       if (winner) {
         status = 'Winner: ' + winner;
@@ -169,7 +184,11 @@ var Game = function (_React$Component2) {
             null,
             status
           ),
-          _react2.default.createElement('ol', null)
+          _react2.default.createElement(
+            'ol',
+            null,
+            moves
+          )
         )
       );
     }
